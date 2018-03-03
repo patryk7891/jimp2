@@ -21,7 +21,6 @@ int factorial(int value) {
     {
         return value*factorial(value+1);
     }
-    //std::cout<<"sprawdzenie"<<std::endl;
     return 0;
-  return 0;
+
 }
