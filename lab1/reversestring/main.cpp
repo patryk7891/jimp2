@@ -1,7 +1,17 @@
-#include <iostream>
+
 #include "ReverseString.h"
 
 int main() {
-    std::cout << "factorial of 20 is: " << factorial(20) << std::endl;
-}
+
+    string word = "";
+
+    char character;
+    cout << "Podaj slowo: "<< endl;
+    while((character = getchar())!= 10)
+    {
+        word += character;
+    }
+    cout<<reverse(word)<<" "<<endl;
+
     return 0;
+}

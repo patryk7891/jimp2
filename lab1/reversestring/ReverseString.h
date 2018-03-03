@@ -5,6 +5,10 @@
 #ifndef JIMP_EXERCISES_REVERSESTRING_H
 #define JIMP_EXERCISES_REVERSESTRING_H
 
-int reverse(int value);
+using namespace std;
 
+#include <iostream>
+#include <cstdio>
+
+string reverse(string str);
 #endif //JIMP_EXERCISES_REVERSESTRING_H
