@@ -2,12 +2,13 @@
 
 string reverse (string str)
 {
-    string reversed="";
-    size_t size = str.size(); //uzyskanie z obiektu string ilości znaków
-    // utworzenie nowego obiektu string na podstawie innego char*, char[], itp..
-
-    for (int i = 0; i<size; i++)
-        reversed += str[size - 1 - i];
-
-    return reversed;
+    size_t size = str.size();
+    if(str=="\0")
+    {
+        return str;
+    }
+    else
+    {
+        return reverse(str.substr(1, size-1)) + str[0];
+    }
 }

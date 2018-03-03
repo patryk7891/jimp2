@@ -9,6 +9,7 @@ using namespace std;
 
 #include <iostream>
 #include <cstdio>
+#include <string.h>
 
 string reverse(string str);
 #endif //JIMP_EXERCISES_REVERSESTRING_H
