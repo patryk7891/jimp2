@@ -26,7 +26,7 @@ int main() {
     }
     else
     {
-        cout<<"Nie wybrano opcji z menu"<<endl;
+        cout<<"Nie wybrano opcji z menu "<<endl;
     }
     return 0;
 }
