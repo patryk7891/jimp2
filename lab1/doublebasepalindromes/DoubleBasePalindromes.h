@@ -11,6 +11,7 @@ using namespace std;
 #include <cstdint>
 #include <cstdlib>
 #include <string>
+#include <bitset>
 uint64_t DoubleBasePalindromes(int max_vaule_exculsive);
 
 #endif //JIMP_EXERCISES_DOUBLEBASEPALINDROMES_H

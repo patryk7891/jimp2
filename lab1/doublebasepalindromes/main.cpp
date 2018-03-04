@@ -4,8 +4,6 @@
 
 #include "DoubleBasePalindromes.h"
 int main() {
-    int liczba;
-    cin>>liczba;
-    DoubleBasePalindromes(liczba);
+    DoubleBasePalindromes(1000000);
     return 0;
 }
