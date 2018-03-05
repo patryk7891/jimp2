@@ -17,7 +17,7 @@ void przypisz_wartosc(int **tab, int n_rows, int n_columns)
 }
 
 void drukuj(int **tab, int n_rows, int n_columns)
-{;
+{
 
     for(int i=0;i<n_rows;i++)
     {
