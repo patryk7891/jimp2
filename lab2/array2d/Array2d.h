@@ -6,9 +6,6 @@
 #define JIMP_EXERCISES_ARRAY2D_H
 
 
-class Array2d {
-
-};
 
 
 #endif //JIMP_EXERCISES_ARRAY2D_H
