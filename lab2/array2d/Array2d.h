@@ -5,7 +5,10 @@
 #ifndef JIMP_EXERCISES_ARRAY2D_H
 #define JIMP_EXERCISES_ARRAY2D_H
 
+using namespace std;
+#include <iostream>
 
-
+int **Array2D(int n_rows, int n_columns);
+void DeleteArray2D(int **array, int n_rows, int n_columns);
 
 #endif //JIMP_EXERCISES_ARRAY2D_H
