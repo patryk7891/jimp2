@@ -13,5 +13,7 @@ int main()
     cout << "Give me columns: ";
     cin << columns;
 
-    **Array2D(rows, columns);
+    int array = **Array2D(rows, columns);
+    DeleteArray2D(array,rows, columns);
+
 }
