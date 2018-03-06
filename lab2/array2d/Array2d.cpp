@@ -2,7 +2,9 @@
 
 #include "Array2d.h"
 
-void przypisz_wartosc(int **tab, int n_rows, int n_columns)
+
+
+void FillArray2D(int n_rows, int n_columns, int **tab)
 {
     int liczba=1;
 
@@ -15,6 +17,7 @@ void przypisz_wartosc(int **tab, int n_rows, int n_columns)
         }
     }
 }
+
 
 void drukuj(int **tab, int n_rows, int n_columns)
 {
@@ -47,16 +50,21 @@ int **Array2D(int n_rows, int n_columns)
         return 0;
     }
 
+    int **wektory = NewArray2D(n_rows, n_columns);
+
+    FillArray2D(n_rows, n_columns, wektory);
+    drukuj(wektory, n_rows, n_columns);
+
+    return wektory;
+
+}
+
+int **NewArray2D(int n_rows, int n_columns) {
     int **wektory = new int *[n_rows];
     for(int i=0; i<n_rows; i++)
     {
         wektory[i] = new int [n_columns];
     }
-
-    przypisz_wartosc(wektory, n_rows, n_columns);
-    drukuj(wektory, n_rows, n_columns);
-
     return wektory;
-
 }
 
