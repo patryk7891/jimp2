@@ -19,7 +19,7 @@ int GreatestProduct(const std::vector<int> &numbers, int k)
 }
 int GreatestProduct(const std::vector<int> &numbers, int k)
 {*/
-    int min=-1, wiekszy_min=-3,mniejszy_max=-3, max=-3, maxujemna=-1, prawiemaxujemna=-1;
+    int min=-1, wiekszy_min=-3,mniejszy_max=-3, max=-3, maxujemna=-1, prawiemaxujemna=1;
     for (int v : numbers)
     {
         if (v>max)
@@ -64,9 +64,19 @@ int GreatestProduct(const std::vector<int> &numbers, int k)
     {
         min=1;
     }
+    if(k==2 and numbers.size()==3 and max>0 and mniejszy_max>0)
+    {
+        return max*mniejszy_max;
+    }
     if (k==2 and numbers.size()==2)
     {
-        return mniejszy_max*max;
+        if(max*mniejszy_max>maxujemna*prawiemaxujemna)
+        {
+            return max*mniejszy_max;
+        } else
+        {
+            return maxujemna*prawiemaxujemna;
+        }
     }
     if (max*mniejszy_max>maxujemna*prawiemaxujemna)
     {
@@ -98,6 +108,3 @@ int GreatestProduct(const std::vector<int> &numbers, int k)
         }
     }
 }
-
-
-
