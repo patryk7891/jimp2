@@ -51,6 +51,4 @@ void Append(ForwardList *list, ForwardList *tail)
         list->next=tail;
     }
     else list=tail;
-
-
 }
