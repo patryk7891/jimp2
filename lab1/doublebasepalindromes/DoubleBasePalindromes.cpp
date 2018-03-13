@@ -4,12 +4,13 @@
 
 #include "DoubleBasePalindromes.h"
 
-bool is_palindrome(string str)
+bool IsItPalindrome(string str)
 {
     size_t dlugosc = str.size();
 
     for (int i = 0; i < dlugosc / 2; i++)
     {
+
         if (str[i] != str[dlugosc - 1 - i])
         {
             return false;
@@ -35,7 +36,7 @@ bool is_double(int number)
         }
     }
 
-    if (is_palindrome(liczba_binary) && is_palindrome(liczba_decimal))
+    if (IsItPalindrome(liczba_binary) && IsItPalindrome(liczba_decimal))
     {
         return true;
     }
