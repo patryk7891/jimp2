@@ -25,6 +25,7 @@ void DestroyList(ForwardList *list)
         list=nastepny;
     }
 }
+
 ForwardList *PushFront(ForwardList *list, int value)
 {
     if (list)
@@ -36,8 +37,6 @@ ForwardList *PushFront(ForwardList *list, int value)
         list=nowy;
         return list;
     }
-
-
 
 }
 void Append(ForwardList *list, ForwardList *tail)
