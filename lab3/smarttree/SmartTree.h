@@ -8,6 +8,7 @@
 #include <ostream>
 #include <string>
 #include <memory>
+#include <regex>
 
 namespace datastructures
 {
@@ -30,6 +31,8 @@ std::unique_ptr<SmartTree> InsertRightChild(std::unique_ptr<SmartTree> tree, std
 void PrintTreeInOrder(const std::unique_ptr<SmartTree> &unique_ptr, std::ostream *out);
 
 std::string DumpTree(const std::unique_ptr<SmartTree> &tree);
+
+    int WhenDivide(const std::string str);
 
 std::unique_ptr<SmartTree> RestoreTree(const std::string &tree);
 

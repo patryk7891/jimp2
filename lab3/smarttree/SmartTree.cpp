@@ -74,8 +74,68 @@ namespace datastructures
         return ret;
     }
 
+    int WhenDivide(const std::string str)
+    {
+        int l=0;
+        int r=0;
+        for(int i=0; i<str.size(); i++)
+        {
+            if (str[i]=='[')
+            {
+                l++;
+            }
+            if (str[i]==']')
+            {
+                r++;
+            }
+
+            if((l==r&&l!=0))
+            {
+                return i;
+            }
+        }
+
+        return 0;
+    }
+
     std::unique_ptr<SmartTree> RestoreTree(const std::string &tree)
     {
+        std::string strin = tree;
+        if(strin[0]=='[')
+        {
+            strin.erase(0,1);
+        }
+
+        if(strin[strin.size()-1]==']')
+        {
+            strin.erase(strin.size()-1, 1);
+        }
+
+        std::regex pattern {R"((\-?\d+|[a-z]+)\s?(.*)?)"};
+        std::smatch matches;
+        std::regex_match(strin, matches, pattern);
+
+        std::unique_ptr<SmartTree> parent = std::make_unique<SmartTree>();
+
+        if(matches[1]=="none")
+        {
+            return nullptr;
+        }
+        else
+        {
+            parent = CreateLeaf(std::stoi(matches[1]));
+        }
+
+        strin = matches[2];
+
+        const std::string str2 = strin.substr(0, WhenDivide(strin)+1);
+        const std::string str3 = strin.substr(WhenDivide(strin)+3, strin.size());
+
+
+        parent->left = RestoreTree(str2);
+        parent->right = RestoreTree(str3);
+
+        return parent;
 
     }
 }
