@@ -16,10 +16,12 @@ namespace ccounter
     void Inc(std::string key, std::unique_ptr<Counter> *counter)
     {
         auto k = counter->get()->mapa.find(key);
+
         if(k != counter->get()->mapa.end())
         {
             k->second++;
         }
+
         else
         {
             counter->get()->mapa.emplace_hint(k, key, 1);
@@ -29,8 +31,11 @@ namespace ccounter
     int Counts(const std::unique_ptr<Counter> &counter, std::string key)
     {
         auto k = counter->mapa.find(key);
+
         if (k != counter->mapa.end())
+        {
             return k->second;
+        }
 
         return 0;
     }
