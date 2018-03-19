@@ -5,6 +5,9 @@
 #ifndef JIMP_EXERCISES_CCOUNTER_H
 #define JIMP_EXERCISES_CCOUNTER_H
 
+
+
+
 #include <string>
 #include <memory>
 #include <map>
@@ -15,7 +18,7 @@ namespace ccounter
 {
     struct Counter
     {
-        std::pair<std::vector<std::string>, std::map<std::string, int>> couple;
+        std::map<std::string, int> mapa;
     };
 
     std::unique_ptr<Counter> Init();
