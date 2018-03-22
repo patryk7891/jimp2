@@ -6,8 +6,7 @@
 #include <cmath>
 #include <ostream>
 
-
-
+namespace geometry {
 
     Square::Square(Point p11, Point p21, Point p31, Point p41) {
         p1 = p11;
@@ -17,10 +16,21 @@
     }
 
     double Square::Circumference() {
-        return (sqrt(pow(std::abs(p1->x_ - p2->x_), 2) + pow(std::abs(p1->y_ - p2->y_), 2))) * 4.0;
+        double a = p1.Distance(p2);
+        if(a<=0 || a!= p3.Distance(p4))
+        {
+            return 0;
+        }
+        return a * 4;
     }
 
     double Square::Area() {
-        return pow(std::abs(p1->x_ - p2->x_), 2) + pow(std::abs(p1->y_ - p2->y_), 2) * sqrt(2.0);
+        double a = p1.Distance(p2);
+        if(a<=0 || a!= p3.Distance(p4))
+        {
+            return 0;
+        }
+        return a * a;
     }
 
+}

@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include "Point.h"
 
-
+namespace geometry {
     class Square {
     public:
         Point p1;
@@ -22,6 +22,6 @@
         double Area();
 
     };
-
+}
 
 #endif //JIMP_EXERCISES_SQUARE_H
