@@ -1,16 +1,13 @@
-//
-// Created by patryk on 24.03.18.
-//
-
 #ifndef JIMP_EXERCISES_SIMPLEJSON_H
 #define JIMP_EXERCISES_SIMPLEJSON_H
 
-
+#include <map>
+#include <vector>
 #include <string>
 #include <experimental/optional>
 #include <iostream>
-#include <vector>
-#include <map>
+
+
 
 using ::std::vector;
 using ::std::map;
@@ -27,7 +24,6 @@ namespace nets
     public:
         JsonValue();
         JsonValue(int number_);
-
         JsonValue(string name);
         JsonValue(double value_);
         JsonValue(bool flag);
@@ -38,9 +34,9 @@ namespace nets
         string ToString() const;
 
     private:
-        optional<int> number;
+        optional<int> liczba;
         optional<double> value;
-        optional<string> name;
+        optional<string> nazwa;
         optional<bool> flag;
         optional<map<string, JsonValue>> jakas_mapa;
         optional<vector<JsonValue>> jakis_wektor;
