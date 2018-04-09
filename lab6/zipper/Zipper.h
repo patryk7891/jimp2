@@ -10,10 +10,10 @@
 #include <cstdlib>
 
 namespace datastructures {
-    class Zipper {
+    class Zipper
+    {
     public:
         static std::vector<std::pair<std::string, int>> zip(std::vector<std::string>, std::vector<int>);
-
     };
 }
 
