@@ -1,8 +1,8 @@
 
 project(xxx)
 
-set(HEDEAR_FILES Xxx.h)
-set(SOURCE_FILES Xxx.cpp)
+set(HEDEAR_FILES XXX.h)
+set(SOURCE_FILES XXX.cpp)
 
 add_library(libxxx STATIC ${SOURCE_FILES})
 target_include_directories(libxxx PUBLIC .)
