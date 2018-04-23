@@ -20,10 +20,12 @@ void drawBall() {
 int main(){
     try{
         drawBall();
-    }catch(CircleException a){
-        cout << "Blad podczas rysowania kola" << endl;
-    }catch(BallException b){
+    }
+    catch(BallException b){
         cout << "Blad podczas rysowania kuli" << endl;
+    }
+    catch(CircleException a){
+        cout << "Blad podczas rysowania kola" << endl;
     }
 
 }
