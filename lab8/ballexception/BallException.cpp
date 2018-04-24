@@ -3,3 +3,8 @@
 //
 
 #include "BallException.h"
+
+void drawBall()
+    {
+        throw BallException();
+    }

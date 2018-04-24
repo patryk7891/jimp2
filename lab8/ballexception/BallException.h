@@ -5,10 +5,18 @@
 #ifndef JIMP_EXERCISES_BALLEXCEPTION_H
 #define JIMP_EXERCISES_BALLEXCEPTION_H
 
+#include <iostream>
+using namespace std;
 
-class BallException {
-
+class CircleException{
+    // Oznacza ze nie mozna wyrysowac kola
 };
+
+class BallException : public CircleException{
+    // Oznacza ze nie mozna wyrysowac kuli
+};
+
+void drawBall();
 
 
 #endif //JIMP_EXERCISES_BALLEXCEPTION_H
