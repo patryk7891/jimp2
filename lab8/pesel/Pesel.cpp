@@ -39,13 +39,13 @@ namespace academia
 
         for(int i = 0; i < 11; i++)
         {
-            if((int)(y[i]) < 48 || (int)(y[i]) > 57)
+            if((y[i]) < '0' || (y[i]) > '9')
             {
                 throw InvalidPeselCharacter();
             }
             else
             {
-                pesel[i] = (int) (y[i]) - 48;
+                pesel[i] = (y[i]) - '0';
             }
         }
 

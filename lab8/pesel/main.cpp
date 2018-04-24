@@ -8,15 +8,15 @@
 int main()
 {
 
-        const char* str = "00000000000";
+        const char* str = "00000000001";
         try{
             academia::Pesel a(str);
-        }catch(academia::InvalidPeselChecksum b){
+        }catch(academia::InvalidPeselChecksum &b){
             std::cout << "zly checksum" << std::endl;
-        }catch(academia::InvalidPeselLength c) {
+        }catch(academia::InvalidPeselLength &c) {
             std::cout << "zla dlugosc" << std::endl;
         }
-        catch(academia::InvalidPeselCharacter d) {
+        catch(academia::InvalidPeselCharacter &d) {
             std::cout << "litery w peselu... troche slabo" << std::endl;
         }
         catch(...){
