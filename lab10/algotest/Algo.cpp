@@ -17,16 +17,10 @@ namespace algo
 
     bool Contains(const std::vector<int> &v, int element)
     {
+
         auto result1 = std::find(v.begin(), v.end(), element);
 
-        if(result1 != v.end())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return result1!=v.end();
 
     }
 
@@ -47,52 +41,38 @@ namespace algo
     std::vector<std::string> MapToString(const std::vector<double> &v)
     {
         std::vector<std::string> vi;
-        for(auto a : v)
-        {
-            vi.emplace_back(std::to_string(a));
-        }
+        std::transform(v.begin(), v.end(), std::back_inserter(vi), [](double x){return std::to_string(x);});
         return vi;
     }
 //
     bool ContainsKey(const std::map<std::string, int> &v, const std::string &key)
     {
-        for (auto a : v)
-        {
-            if (a.first==key)
-            {
-                return true;
-            }
-        }
-        return false;
+        std::vector<std::string> vi;
+        std::transform(v.begin(), v.end(), std::back_inserter(vi), [](std::pair<std::string, int> a) {return a.first;});
+        auto result1 = std::find(vi.begin(), vi.end(), key);
+
+        return result1!=vi.end();
+
     }
     std::set<std::string> Keys(const std::map<std::string, int> &m)
     {
-        std::set<std::string> s;
-        for (auto a : m)
-        {
-            s.emplace(a.first);
-        }
-        return s;
+        std::set<std::string> vi;
+        std::transform(m.begin(), m.end(), std::inserter(vi, vi.begin()), [](std::pair<std::string, int> a) {return a.first;});
+        return vi;
     }
     bool ContainsValue(const std::map<std::string, int> &v, int value)
     {
-        for (auto a : v)
-        {
-            if (a.second==value)
-            {
-                return true;
-            }
-        }
-        return false;
+        std::vector<int> vi;
+        std::transform(v.begin(), v.end(), std::back_inserter(vi), [](std::pair<std::string, int> a) {return a.second;});
+        auto result1 = std::find(vi.begin(), vi.end(), value);
+
+        return result1!=vi.end();
     }
     std::vector<int> Values(const std::map<std::string, int> &m)
     {
-        std::vector<int> s;
-        for (auto a : m)
-        {
-            s.emplace_back(a.second);
-        }
-        return s;
+        std::vector<int> vi;
+        std::transform(m.begin(), m.end(), std::back_inserter(vi), [](std::pair<std::string, int> a) {return a.second;});
+        return vi;
     }
 
     void SortInPlace(std::vector<int> *v)
@@ -107,7 +87,6 @@ namespace algo
         return ret;
     }
 
-
     int Sum(const std::vector<int> &v)
     {
         int sum = std::accumulate(v.begin(), v.end(), 0);
@@ -119,13 +98,12 @@ namespace algo
         return product;
     }
 
-
-    std::map<std::string, int> DivisableBy(const std::map<std::string, int> &m,int divisor)
+    std::map<std::string, int> DivisableBy(const std::map<std::string, int> &m, int divisor)
     {
+        std::map<std::string, int> a;
+        std::transform(m.begin(), m.end(), std::inserter(a, a.begin()), [divisor](std::pair<std::string, int> a) {if(a.second%divisor==0){return a;};});
 
+        return a;
     };
-    
-    
-
 
 }
