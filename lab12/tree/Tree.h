@@ -35,6 +35,8 @@ namespace tree
             depth = 1;
         }
 
+        auto Root(){return this;};
+
 
         void Insert(const T &e) {
             if(e < this->value)
